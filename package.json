@@ -1,0 +1,37 @@
+{
+  "name": "clean-architecture-nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasrluz/clean-architecture-nodejs.git"
+  },
+  "author": "lucasrluz <lucasr.luzbr@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucasrluz/clean-architecture-nodejs/issues"
+  },
+  "homepage": "https://github.com/lucasrluz/clean-architecture-nodejs#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.0",
+    "@types/supertest": "^2.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "eslint": "^8.7.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.4.7",
+    "prettier": "^2.5.1",
+    "supertest": "^6.2.2",
+    "ts-jest": "^27.1.3",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
