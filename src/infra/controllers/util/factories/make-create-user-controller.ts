@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { CreateUserUseCase } from '../../../../app/useCases/create-user-use-case';
+import { CreateUserUseCase } from '../../../../app/useCases/user/create-user-use-case';
 import { Bcrypt } from '../../../bcrypt/bcrypt';
 import { PrismaUserRepository } from '../../../prisma/repositories/prisma-user-repository';
 import { CreateUserController } from '../../create-user-controller';

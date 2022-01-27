@@ -1,7 +1,7 @@
-import { User } from '../../domain/user';
-import { EncoderInterface } from '../../infra/bcrypt/interface/encoder-interface';
-import { UserRepositoryInterface } from '../../infra/prisma/repositories/interfaces/user-repository-interface';
-import { error, success } from '../../shared/response/response';
+import { User } from '../../../domain/user';
+import { EncoderInterface } from '../../../infra/bcrypt/interface/encoder-interface';
+import { UserRepositoryInterface } from '../../../infra/prisma/repositories/interfaces/user-repository-interface';
+import { error, success } from '../../../shared/response/response';
 import { CreateUserUseCaseInterface } from './interfaces/create-user-use-case-interface';
 import { ExistingUserError } from './util/errors/existing-user-error';
 

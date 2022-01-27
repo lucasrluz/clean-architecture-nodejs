@@ -1,4 +1,4 @@
-import { CreateUserUseCaseInterface } from '../../app/useCases/interfaces/create-user-use-case-interface';
+import { CreateUserUseCaseInterface } from '../../app/useCases/user/interfaces/create-user-use-case-interface';
 import { User } from '../../domain/user';
 import { badRequest, created } from './util/response/responses';
 
