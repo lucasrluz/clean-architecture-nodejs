@@ -1,6 +1,6 @@
 import { CreateUserUseCaseInterface } from '../../../app/useCases/user/interfaces/create-user-use-case-interface';
 import { User } from '../../../domain/user';
-import { badRequest, created } from './util/response/responses';
+import { badRequest, created } from '../util/response/responses';
 
 export class CreateUserController {
   private readonly createUserUseCase: CreateUserUseCaseInterface;
