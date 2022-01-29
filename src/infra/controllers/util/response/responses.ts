@@ -1,3 +1,10 @@
+export const ok = (value: any) => {
+  return {
+    statusCode: 200,
+    value,
+  };
+};
+
 export const created = (value: any) => {
   return {
     statusCode: 201,
