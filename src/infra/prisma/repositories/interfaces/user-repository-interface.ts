@@ -6,4 +6,9 @@ export interface UserRepositoryInterface {
     username: string,
     email: string,
   ): Promise<{ username: string | undefined; email: string | undefined }>;
+  findByEmail(email: string): Promise<{
+    id: string | undefined;
+    email: string | undefined;
+    password: string | undefined;
+  }>;
 }

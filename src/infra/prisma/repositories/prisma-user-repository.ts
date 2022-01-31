@@ -40,4 +40,22 @@ export class PrismaUserRepository implements UserRepositoryInterface {
       email: response?.email,
     };
   }
+
+  async findByEmail(email: string): Promise<{
+    id: string | undefined;
+    email: string | undefined;
+    password: string | undefined;
+  }> {
+    const response = await this.prisma.user.findFirst({
+      where: {
+        email: email,
+      },
+    });
+
+    return {
+      id: response?.id,
+      email: response?.email,
+      password: response?.password,
+    };
+  }
 }
