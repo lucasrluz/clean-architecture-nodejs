@@ -6,6 +6,7 @@ describe('Authentication tests', () => {
   const prisma = new PrismaClient();
 
   beforeAll(async () => {
+    await prisma.refreshToken.deleteMany();
     await prisma.user.deleteMany();
   });
 
@@ -25,6 +26,7 @@ describe('Authentication tests', () => {
 
       expect(response.status).toEqual(200);
 
+      await prisma.refreshToken.deleteMany();
       await prisma.user.deleteMany();
     });
 
@@ -58,6 +60,7 @@ describe('Authentication tests', () => {
       expect(response.status).toEqual(400);
       expect(response.body).toEqual('Email or password incorrect');
 
+      await prisma.refreshToken.deleteMany();
       await prisma.user.deleteMany();
     });
   });
