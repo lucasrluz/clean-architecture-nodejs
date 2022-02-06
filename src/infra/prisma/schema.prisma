@@ -15,4 +15,12 @@ model User {
   username String @unique
   email    String @unique
   password String
+  refreshToken RefreshToken?
+}
+
+model RefreshToken {
+  id String @id @default(uuid())
+  expiresIn Int
+  userId String
+  user User @relation(fields: [userId], references: [id])
 }
