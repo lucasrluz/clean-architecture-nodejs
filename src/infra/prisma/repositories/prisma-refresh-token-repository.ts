@@ -24,6 +24,24 @@ export class PrismaRefreshTokenRepository
     };
   }
 
+  async findById(refreshTokenId: string) {
+    const response = await this.prisma.refreshToken.findFirst({
+      where: {
+        id: refreshTokenId,
+      },
+    });
+
+    return response;
+  }
+
+  async deleteById(refreshTokenId: string) {
+    await this.prisma.refreshToken.delete({
+      where: {
+        id: refreshTokenId,
+      },
+    });
+  }
+
   async deleteByUserId(userId: string) {
     await this.prisma.refreshToken.deleteMany({
       where: {
