@@ -1,6 +1,6 @@
 export class RefreshToken {
-  userId: string;
-  expiresIn: number;
+  public userId: string;
+  public expiresIn: number;
 
   constructor(userId: string, expiresIn: number) {
     this.userId = userId;
