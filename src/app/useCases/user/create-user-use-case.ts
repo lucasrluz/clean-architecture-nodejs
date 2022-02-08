@@ -1,4 +1,4 @@
-import { User } from '../../../domain/user';
+import { User } from '../../../domain/user/user';
 import { EncoderInterface } from '../../../infra/bcrypt/interface/encoder-interface';
 import { UserRepositoryInterface } from '../../../infra/prisma/repositories/interfaces/user-repository-interface';
 import { error, success } from '../../../shared/response/response';

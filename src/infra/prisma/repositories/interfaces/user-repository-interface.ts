@@ -1,4 +1,4 @@
-import { User } from '../../../../domain/user';
+import { User } from '../../../../domain/user/user';
 
 export interface UserRepositoryInterface {
   create(user: User): Promise<{ username: string; email: string }>;
