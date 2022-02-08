@@ -3,13 +3,9 @@ import { ControllerInterface } from '../../../../controllers/interfaces/controll
 
 export const adaptRoute = (controller: ControllerInterface) => {
   return async (req: Request, res: Response) => {
-    const userData = {
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
-    };
+    const httpRequest = req.body;
 
-    const response = await controller.perform(userData);
+    const response = await controller.perform(httpRequest);
 
     return res.status(response.statusCode).json(response.value);
   };
