@@ -9,7 +9,7 @@ export class PrismaUserRepository implements UserRepositoryInterface {
     this.prisma = prisma;
   }
 
-  async create(user: User) {
+  public async create(user: User) {
     const response = await this.prisma.user.create({
       data: {
         username: user.username,
@@ -24,7 +24,7 @@ export class PrismaUserRepository implements UserRepositoryInterface {
     };
   }
 
-  async findByUsernameAndEmail(username: string, email: string) {
+  public async findByUsernameAndEmail(username: string, email: string) {
     const response = await this.prisma.user.findFirst({
       where: {
         username: username,
@@ -38,7 +38,7 @@ export class PrismaUserRepository implements UserRepositoryInterface {
     };
   }
 
-  async findByEmail(email: string) {
+  public async findByEmail(email: string) {
     const response = await this.prisma.user.findFirst({
       where: {
         email: email,
