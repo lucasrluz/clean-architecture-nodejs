@@ -9,7 +9,7 @@ export class CreateUserController {
     this.createUserUseCase = createUserUseCase;
   }
 
-  async perform(user: User) {
+  public async perform(user: User) {
     const response = await this.createUserUseCase.create(user);
 
     if (response.isError()) return badRequest(response.value);
