@@ -31,11 +31,11 @@ export class CreateUserUseCase implements CreateUserUseCaseInterface {
 
     user.password = await this.encoder.encode(user.password);
 
-    const response = await this.userRepository.create(user);
+    const createUserResponse = await this.userRepository.create(user);
 
     return success({
-      username: response.username,
-      email: response.email,
+      username: createUserResponse.username,
+      email: createUserResponse.email,
     });
   }
 }
