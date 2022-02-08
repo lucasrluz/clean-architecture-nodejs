@@ -17,7 +17,7 @@ export class CreateUserUseCase implements CreateUserUseCaseInterface {
     this.encoder = encoder;
   }
 
-  async create(user: User) {
+  public async create(user: User) {
     const userOrError = User.create(user.username, user.email, user.password);
 
     if (userOrError.isError()) return error(userOrError.value.message);
