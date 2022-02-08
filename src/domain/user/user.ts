@@ -7,9 +7,9 @@ import { validatePassword } from './util/validations/password-validate';
 import { validateUsername } from './util/validations/username-validate';
 
 export class User {
-  username: string;
-  email: string;
-  password: string;
+  public username: string;
+  public email: string;
+  public password: string;
 
   private constructor(username: string, email: string, password: string) {
     this.username = username;
