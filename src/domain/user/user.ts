@@ -1,17 +1,16 @@
 import { InvalidEmailError } from './util/errors/invalid-email-error';
-import { InvalidPasswordError } from './util/errors/invalid-password-error';
 import { InvalidUsernameError } from './util/errors/invalid-username-error';
 import { error, success } from '../../shared/response/response';
 import { validateEmail } from './util/validations/email-validate';
-import { validatePassword } from './util/validations/password-validate';
 import { validateUsername } from './util/validations/username-validate';
+import { Password } from './password';
 
 export class User {
   public username: string;
   public email: string;
-  public password: string;
+  public password: Password;
 
-  private constructor(username: string, email: string, password: string) {
+  private constructor(username: string, email: string, password: Password) {
     this.username = username;
     this.email = email;
     this.password = password;
@@ -22,8 +21,10 @@ export class User {
 
     if (!validateEmail(email)) return error(new InvalidEmailError());
 
-    if (!validatePassword(password)) return error(new InvalidPasswordError());
+    const passwordValidation = Password.create(password);
 
-    return success(new User(username, email, password));
+    if (passwordValidation.isError()) return error(passwordValidation.value);
+
+    return success(new User(username, email, passwordValidation.value));
   }
 }
