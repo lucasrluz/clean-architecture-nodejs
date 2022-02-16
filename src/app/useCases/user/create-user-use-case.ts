@@ -1,5 +1,6 @@
 import { User } from '../../../domain/user/user';
 import { EncoderInterface } from '../../../infra/bcrypt/interface/encoder-interface';
+import { UserData } from '../../../shared/type/user-data';
 import { UserRepositoryInterface } from '../../../infra/prisma/repositories/interfaces/user-repository-interface';
 import { error, success } from '../../../shared/response/response';
 import { CreateUserUseCaseInterface } from './interfaces/create-user-use-case-interface';
@@ -17,7 +18,7 @@ export class CreateUserUseCase implements CreateUserUseCaseInterface {
     this.encoder = encoder;
   }
 
-  public async create(user: User) {
+  public async create(user: UserData) {
     const userOrError = User.create(user.username, user.email, user.password);
 
     if (userOrError.isError()) return error(userOrError.value.message);

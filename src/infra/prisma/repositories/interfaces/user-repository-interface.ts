@@ -1,7 +1,7 @@
-import { User } from '../../../../domain/user/user';
+import { UserData } from '../../../../shared/type/user-data';
 
 export interface UserRepositoryInterface {
-  create(user: User): Promise<{ username: string; email: string }>;
+  create(user: UserData): Promise<{ username: string; email: string }>;
   findByUsernameAndEmail(
     username: string,
     email: string,

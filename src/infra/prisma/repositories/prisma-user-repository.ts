@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { User } from '../../../domain/user/user';
+import { UserData } from '../../../shared/type/user-data';
 import { UserRepositoryInterface } from './interfaces/user-repository-interface';
 
 export class PrismaUserRepository implements UserRepositoryInterface {
@@ -9,7 +9,7 @@ export class PrismaUserRepository implements UserRepositoryInterface {
     this.prisma = prisma;
   }
 
-  public async create(user: User) {
+  public async create(user: UserData) {
     const response = await this.prisma.user.create({
       data: {
         username: user.username,

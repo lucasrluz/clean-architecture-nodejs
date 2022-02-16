@@ -1,6 +1,6 @@
 import { CreateUserUseCaseInterface } from '../../../app/useCases/user/interfaces/create-user-use-case-interface';
-import { User } from '../../../domain/user/user';
 import { badRequest, created } from '../util/response/responses';
+import { UserData } from '../../../shared/type/user-data';
 
 export class CreateUserController {
   private readonly createUserUseCase: CreateUserUseCaseInterface;
@@ -9,7 +9,7 @@ export class CreateUserController {
     this.createUserUseCase = createUserUseCase;
   }
 
-  public async perform(user: User) {
+  public async perform(user: UserData) {
     const response = await this.createUserUseCase.create(user);
 
     if (response.isError()) return badRequest(response.value);

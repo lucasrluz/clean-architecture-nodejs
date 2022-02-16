@@ -1,7 +1,7 @@
-import { User } from '../../../../domain/user/user';
+import { UserData } from '../../../../shared/type/user-data';
 
 export interface CreateUserUseCaseInterface {
   create(
-    user: User,
+    user: UserData,
   ): Promise<{ value: any; isError(): boolean; isSuccess(): boolean }>;
 }
